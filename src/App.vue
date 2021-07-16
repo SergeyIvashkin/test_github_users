@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SearchUsers from "./components/SearchUsers.vue";
+import SearchUsers from "./views/SearchUsers.vue";
 
 export default {
   name: "App",

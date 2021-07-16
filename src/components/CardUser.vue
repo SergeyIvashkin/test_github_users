@@ -2,18 +2,22 @@
   <div class="main-container">
     <div class="profile">
       <img :src="data.avatar_url" />
-      <div class="img-name">
+      <div class="name">
+        <h3>Login:</h3>
         {{ data.login }}
       </div>
       <div class="bio" id="bio">{{ data.bio }}</div>
-      <div class="other"></div>
+      <div class="location">
+        <h3>Country:</h3>
+        {{ data.location }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CardUserData",
+  name: "CardUser",
   props: {
     data: {
       type: Object,
@@ -27,12 +31,10 @@ export default {
 </script>
 
 <style scoped>
-.main-container {
-  position: fixed;
-  top: 200px;
-  right: 42px;
-}
-img {
-  width: 100%;
+.location,
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

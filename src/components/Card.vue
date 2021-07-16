@@ -1,21 +1,15 @@
 <template>
-  <div class="main-container" @click="showUserData">
-    <div class="profile">
-      <div class="img-name">
-        <span class="name" id="name"> {{ dataUser.name }} </span><br />
-        <a :href="dataUser.html_url" class="username" id="username"
-          >link to the repository</a
-        >
-      </div>
-      <div class="bio" id="bio">{{ dataUser.bio }}</div>
-      <div class="other">
-        <a id="flwrs-link"
-          ><span id="followers">forks</span>{{ dataUser.forks }}</a
-        >
-        <a id="flwin-link"
-          ><span id="following">star</span>{{ dataUser.stargazers_count }}</a
-        >
-      </div>
+  <div class="profile" @click="showUserData">
+    <div class="img-name">
+      <span class="name" id="name"> {{ dataUser.name }} </span><br />
+      <a :href="dataUser.html_url" class="username" id="username"
+        >link to the repository</a
+      >
+    </div>
+    <div class="bio" id="bio">{{ dataUser.bio }}</div>
+    <div class="other">
+      <p><span class="followers">forks</span>{{ dataUser.forks }}</p>
+      <p><span class="following">star</span>{{ dataUser.stargazers_count }}</p>
     </div>
   </div>
 </template>
@@ -40,41 +34,9 @@ export default {
 </script>
 
 <style scoped>
-.main-container {
-  margin: 15px;
-}
-.search-container {
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 90px;
-  background: #fff;
-  display: flex;
-  padding-left: 7px;
-  border-radius: 15px;
-  overflow: hidden;
-  height: 40px;
-  gap: 1%;
-}
-.input {
-  border: none;
-  outline: none;
-  width: 90%;
-}
-.input:focus {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.219);
-}
-.search {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  height: 100%;
-  background-color: rgb(59, 128, 255);
-}
 .profile {
-  width: 300px;
+  max-width: 300px;
   background-color: cadetblue;
-  margin-top: 40px;
   border-radius: 10px;
 }
 .img-name {
@@ -97,9 +59,8 @@ export default {
   height: 90px;
   border-top: 1px solid grey;
 }
-.other a {
+.other p {
   width: 50%;
-  border: 1px solid rgba(128, 128, 128, 0.438);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,8 +68,8 @@ export default {
   text-decoration: none;
   color: #000;
 }
-#followers,
-#following {
+.followers,
+.following {
   font-size: 20px;
   font-weight: bold;
 }
